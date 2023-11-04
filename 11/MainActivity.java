@@ -1,4 +1,4 @@
-package com.example.sem_5_mcad;
+package com.prakhar_parikh.sem_5_mcad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,28 +25,13 @@ public class MainActivity extends AppCompatActivity {
         lItems.add("Three");
         ArrayAdapter<String> lAdapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.listText, lItems);
         lw.setAdapter(lAdapter);
-        
-        findViewById(R.id.l_add).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                lItems.add("Four");
-                lAdapter.notifyDataSetChanged();
-            }
-        });
-        findViewById(R.id.l_up).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                lItems.set(3,  "Updated Item");
-                lAdapter.notifyDataSetChanged();
-            }
-        });
-        findViewById(R.id.l_rm).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                lItems.remove(3);
-                lAdapter.notifyDataSetChanged();
-            }
-        });
+
+        lItems.add("Four");
+        lAdapter.notifyDataSetChanged();
+        lItems.set(3,  "Updated Item");
+        lAdapter.notifyDataSetChanged();
+        lItems.remove(3);
+        lAdapter.notifyDataSetChanged();
         lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -62,27 +47,12 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> sAdapter = new ArrayAdapter<String>(this, R.layout.list_item, sItems);
         sw.setAdapter(sAdapter);
 
-        findViewById(R.id.s_add).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sItems.add("Four");
-                sAdapter.notifyDataSetChanged();
-            }
-        });
-        findViewById(R.id.s_up).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sItems.set(3,  "Updated Item");
-                sAdapter.notifyDataSetChanged();
-            }
-        });
-        findViewById(R.id.s_rm).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sItems.remove(3);
-                sAdapter.notifyDataSetChanged();
-            }
-        });
+        sItems.add("Four");
+        sAdapter.notifyDataSetChanged();
+        sItems.set(3,  "Updated Item");
+        sAdapter.notifyDataSetChanged();
+        sItems.remove(3);
+        sAdapter.notifyDataSetChanged();
         sw.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
